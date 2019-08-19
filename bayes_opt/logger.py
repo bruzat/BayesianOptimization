@@ -12,7 +12,7 @@ def _get_default_logger(verbose):
 
 
 class ScreenLogger(_Tracker):
-    _default_cell_size = 9
+    _default_cell_size = 10
     _default_precision = 4
 
     def __init__(self, verbose=2):
@@ -67,7 +67,7 @@ class ScreenLogger(_Tracker):
         for key in instance.space.keys:
             cells.append(self._format_number(res["params"][key]))
 
-        return "| " + " | ".join(map(colour, cells)) + " |"
+        return "|" + "|".join(map(colour, cells)) + "|"
 
     def _header(self, instance):
         cells = []
@@ -76,7 +76,7 @@ class ScreenLogger(_Tracker):
         for key in instance.space.keys:
             cells.append(self._format_key(key))
 
-        line = "| " + " | ".join(cells) + " |"
+        line = "|" + "|".join(cells) + "|"
         self._header_length = len(line)
         return line + "\n" + ("-" * self._header_length)
 
