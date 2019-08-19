@@ -45,7 +45,7 @@ class ScreenLogger(_Tracker):
             if "." in s:
                 return s[:self._default_cell_size]
             else:
-                return s[:self._default_cell_size - 3] + "..."
+                return s[:self._default_cell_size - 1] + "."
         return s
 
     def _format_key(self, key):
